@@ -59,115 +59,319 @@ export const QUICK_ACTIONS = [
 ];
 
 export const CODING_QUESTIONS: CodeQuestion[] = [
+  // Arrays
   {
-    id: "two-sum",
-    title: "Two Sum",
+    id: "max-subarray-sum",
+    title: "Maximum Subarray Sum",
     description:
-      "Given an array of integers `nums` and an integer `target`, return indices of the two numbers in the array such that they add up to `target`.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.",
+      "Given an integer array `nums`, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.",
     examples: [
       {
-        input: "nums = [2,7,11,15], target = 9",
-        output: "[0,1]",
-        explanation: "Because nums[0] + nums[1] == 9, we return [0, 1]",
+        input: "nums = [-2,1,-3,4,-1,2,1,-5,4]",
+        output: "6",
+        explanation: "The subarray [4,-1,2,1] has the largest sum 6.",
       },
       {
-        input: "nums = [3,2,4], target = 6",
-        output: "[1,2]",
+        input: "nums = [1]",
+        output: "1",
       },
     ],
     starterCode: {
-      javascript: `function twoSum(nums, target) {
+      javascript: `function maxSubArray(nums) {
   // Write your solution here
-  
+  return 0;
 }`,
-      python: `def two_sum(nums, target):
+      python: `def max_sub_array(nums):
     # Write your solution here
-    pass`,
+    return 0`,
       java: `class Solution {
-    public int[] twoSum(int[] nums, int target) {
+    public int maxSubArray(int[] nums) {
         // Write your solution here
-        
+        return 0;
     }
 }`,
+      cpp: `class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        // Write your solution here
+        return 0;
+    }
+};`,
     },
     constraints: [
-      "2 ≤ nums.length ≤ 104",
-      "-109 ≤ nums[i] ≤ 109",
-      "-109 ≤ target ≤ 109",
-      "Only one valid answer exists.",
+      "1 ≤ nums.length ≤ 10^5",
+      "-10^4 ≤ nums[i] ≤ 10^4",
     ],
   },
+  // Linked List
   {
-    id: "reverse-string",
-    title: "Reverse String",
+    id: "reverse-linked-list",
+    title: "Reverse Linked List",
     description:
-      "Write a function that reverses a string. The input string is given as an array of characters `s`.\n\nYou must do this by modifying the input array in-place with O(1) extra memory.",
+      "Given the head of a singly linked list, reverse the list and return its head.",
     examples: [
       {
-        input: 's = ["h","e","l","l","o"]',
-        output: '["o","l","l","e","h"]',
+        input: "head = [1,2,3,4,5]",
+        output: "[5,4,3,2,1]",
       },
       {
-        input: 's = ["H","a","n","n","a","h"]',
-        output: '["h","a","n","n","a","H"]',
+        input: "head = [1,2]",
+        output: "[2,1]",
       },
     ],
     starterCode: {
-      javascript: `function reverseString(s) {
+      javascript: `function reverseList(head) {
   // Write your solution here
-  
+  return null;
 }`,
-      python: `def reverse_string(s):
+      python: `def reverse_list(head):
     # Write your solution here
-    pass`,
+    return None`,
       java: `class Solution {
-    public void reverseString(char[] s) {
+    public ListNode reverseList(ListNode head) {
         // Write your solution here
-        
+        return null;
     }
 }`,
+      cpp: `class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        // Write your solution here
+        return nullptr;
+    }
+};`,
     },
+    constraints: [
+      "The number of nodes in the list is in the range [0, 5000]",
+      "-5000 ≤ Node.val ≤ 5000",
+    ],
   },
+  // Stacks & Queues
   {
-    id: "palindrome-number",
-    title: "Palindrome Number",
+    id: "valid-parentheses",
+    title: "Valid Parentheses",
     description:
-      "Given an integer `x`, return `true` if `x` is a palindrome, and `false` otherwise.\n\nAn integer is a palindrome when it reads the same forward and backward.",
+      "Given a string containing just the characters '(', ')', '{', '}', '[', and ']', determine if the input string is valid.",
     examples: [
       {
-        input: "x = 121",
+        input: "s = '()'",
         output: "true",
-        explanation: "121 reads as 121 from left to right and from right to left.",
       },
       {
-        input: "x = -121",
+        input: "s = '([)]'",
         output: "false",
-        explanation:
-          "From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.",
       },
     ],
     starterCode: {
-      javascript: `function isPalindrome(x) {
+      javascript: `function isValid(s) {
   // Write your solution here
-  
+  return false;
 }`,
-      python: `def is_palindrome(x):
+      python: `def is_valid(s):
     # Write your solution here
-    pass`,
+    return False`,
       java: `class Solution {
-    public boolean isPalindrome(int x) {
+    public boolean isValid(String s) {
         // Write your solution here
-        
+        return false;
     }
 }`,
+      cpp: `class Solution {
+public:
+    bool isValid(string s) {
+        // Write your solution here
+        return false;
+    }
+};`,
     },
+    constraints: [
+      "1 ≤ s.length ≤ 10^4",
+      "s consists of parentheses only '()[]{}'",
+    ],
   },
+  // Trees
+  {
+    id: "binary-tree-level-order-traversal",
+    title: "Binary Tree Level Order Traversal",
+    description:
+      "Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).",
+    examples: [
+      {
+        input: "root = [3,9,20,null,null,15,7]",
+        output: "[[3], [9, 20], [15, 7]]",
+      },
+      {
+        input: "root = [1]",
+        output: "[[1]]",
+      },
+    ],
+    starterCode: {
+      javascript: `function levelOrder(root) {
+  // Write your solution here
+  return [];
+}`,
+      python: `def level_order(root):
+    # Write your solution here
+    return []`,
+      java: `class Solution {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        // Write your solution here
+        return new ArrayList<>();
+    }
+}`,
+      cpp: `class Solution {
+public:
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        // Write your solution here
+        return {};
+    }
+};`,
+    },
+    constraints: [
+      "The number of nodes in the tree is in the range [0, 2000]",
+      "-1000 ≤ Node.val ≤ 1000",
+    ],
+  },
+  // Graphs
+  {
+    id: "num-islands",
+    title: "Number of Islands",
+    description:
+      "Given a 2D grid consisting of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically.",
+    examples: [
+      {
+        input: "grid = [['1','1','1','1','0'],['1','1','0','1','0'],['1','1','0','0','0'],['0','0','0','0','0']]",
+        output: "1",
+      },
+      {
+        input: "grid = [['1','1','0','0','0'],['1','1','0','0','0'],['0','0','1','0','0'],['0','0','0','1','1']]",
+        output: "3",
+      },
+    ],
+    starterCode: {
+      javascript: `function numIslands(grid) {
+  // Write your solution here
+  return 0;
+}`,
+      python: `def num_islands(grid):
+    # Write your solution here
+    return 0`,
+      java: `class Solution {
+    public int numIslands(char[][] grid) {
+        // Write your solution here
+        return 0;
+    }
+}`,
+      cpp: `class Solution {
+public:
+    int numIslands(vector<vector<char>>& grid) {
+        // Write your solution here
+        return 0;
+    }
+};`,
+    },
+    constraints: [
+      "m == grid.length",
+      "n == grid[i].length",
+      "1 ≤ m, n ≤ 300",
+      "grid[i][j] is '0' or '1'",
+    ],
+  },
+  // Sorting & Searching
+  {
+    id: "binary-search",
+    title: "Binary Search",
+    description:
+      "Given a sorted array of integers `nums` and a target value `target`, return the index of `target` in `nums`. If `target` is not found, return -1.",
+    examples: [
+      {
+        input: "nums = [-1,0,3,5,9,12], target = 9",
+        output: "4",
+      },
+      {
+        input: "nums = [-1,0,3,5,9,12], target = 2",
+        output: "-1",
+      },
+    ],
+    starterCode: {
+      javascript: `function search(nums, target) {
+  // Write your solution here
+  return -1;
+}`,
+      python: `def search(nums, target):
+    # Write your solution here
+    return -1`,
+      java: `class Solution {
+    public int search(int[] nums, int target) {
+        // Write your solution here
+        return -1;
+    }
+}`,
+      cpp: `class Solution {
+public:
+    int search(vector<int>& nums, int target) {
+        // Write your solution here
+        return -1;
+    }
+};`,
+    },
+    constraints: [
+      "1 ≤ nums.length ≤ 10^4",
+      "−10^4 ≤ nums[i], target ≤ 10^4",
+    ],
+  },
+  // Dynamic Programming
+  {
+    id: "climbing-stairs",
+    title: "Climbing Stairs",
+    description:
+      "You are climbing a staircase. It takes `n` steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you reach the top?",
+    examples: [
+      {
+        input: "n = 2",
+        output: "2",
+      },
+      {
+        input: "n = 3",
+        output: "3",
+      },
+    ],
+    starterCode: {
+      javascript: `function climbStairs(n) {
+  // Write your solution here
+  return 0;
+}`,
+      python: `def climb_stairs(n):
+    # Write your solution here
+    return 0`,
+      java: `class Solution {
+    public int climbStairs(int n) {
+        // Write your solution here
+        return 0;
+    }
+}`,
+      cpp: `class Solution {
+public:
+    int climbStairs(int n) {
+        // Write your solution here
+        return 0;
+    }
+};`,
+    },
+    constraints: [
+      "1 ≤ n ≤ 45",
+    ],
+  },
+  // Add other questions from different DSA topics...
 ];
+
+
 
 export const LANGUAGES = [
   { id: "javascript", name: "JavaScript", icon: "/javascript.png" },
   { id: "python", name: "Python", icon: "/python.png" },
   { id: "java", name: "Java", icon: "/java.png" },
+  { id:"cpp", name: "C++", icon: "/cpp.jpg" },
 ] as const;
 
 export interface CodeQuestion {
